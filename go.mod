@@ -1,3 +1,3 @@
 module github.com/travisuser1/specific-Go-version
 
-go 1.22.5
+go 1.18
