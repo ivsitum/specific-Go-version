@@ -17,11 +17,17 @@ jobs:
       script:
         - echo "Running tests in the 'test' stage"
         - echo "Decrypted variable value is $SECRET_KEY"
+        # Assuming you need to install dependencies, add the line below
+        - pip install -r requirements.txt  # Install dependencies (make sure the file exists)
+        # Run tests if you have any
+        - pytest  # Example: use pytest to run your tests
     - stage: test
       python: "3.9"
       script:
         - echo "Running tests in the 'test' stage"
         - echo "Decrypted variable value is $SECRET_KEY"
+        - pip install -r requirements.txt  # Install dependencies
+        - pytest  # Run tests
     - stage: deploy
       python: "3.8"
       script:
