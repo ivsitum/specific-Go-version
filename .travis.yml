@@ -2,7 +2,6 @@ language: python
 python:
   - "3.8"
   - "3.9"
-  - "3.10"
 
 env:
   - secure: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmVkX2V2ZXJ5X3ZhbCI6ImlzdGQxfHAzZC5vcmZyYWRnb2IkZXFzLm=="  # Your encrypted SECRET_KEY
