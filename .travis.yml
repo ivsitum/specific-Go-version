@@ -3,9 +3,6 @@ python:
   - "3.8"
   - "3.9"
 
-env:
-  - secure: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmVkX2V2ZXJ5X3ZhbCI6ImlzdGQxfHAzZC5vcmZyYWRnb2IkZXFzLm=="  # Your encrypted SECRET_KEY
-
 stages:
   - test
   - deploy
@@ -15,29 +12,16 @@ jobs:
     - stage: test
       python: "3.8"
       script:
-        - echo "Running tests in the 'test' stage"
-        - echo "Decrypted variable value is $SECRET_KEY"
-        # Assuming you need to install dependencies, add the line below
-        - pip install -r requirements.txt  # Install dependencies (make sure the file exists)
-        # Run tests if you have any
-        - pytest  # Example: use pytest to run your tests
+        - echo "Running tests in the 'test' stage for Python 3.8"
     - stage: test
       python: "3.9"
       script:
-        - echo "Running tests in the 'test' stage"
-        - echo "Decrypted variable value is $SECRET_KEY"
-        - pip install -r requirements.txt  # Install dependencies
-        - pytest  # Run tests
+        - echo "Running tests in the 'test' stage for Python 3.9"
     - stage: deploy
       python: "3.8"
       script:
         - echo "Deployment stage for Python 3.8"
-        - echo "Deploying application..."
     - stage: deploy
       python: "3.9"
       script:
         - echo "Deployment stage for Python 3.9"
-        - echo "Deploying application..."
-
-before_deploy:
-  - echo "This is just a test for multi-stage builds"
