@@ -1,7 +1,9 @@
-language: python
-python:
-  - "3.8"
-  - "3.9"
+language: go
+
+go:
+  - "1.18"
+  - "1.19"
+  - "1.20"
 
 stages:
   - test
@@ -10,18 +12,26 @@ stages:
 jobs:
   include:
     - stage: test
-      python: "3.8"
+      go: "1.18"
       script:
-        - echo "Running tests in the 'test' stage for Python 3.8"
+        - echo "Running tests in the 'test' stage for Go 1.18"
     - stage: test
-      python: "3.9"
+      go: "1.19"
       script:
-        - echo "Running tests in the 'test' stage for Python 3.9"
+        - echo "Running tests in the 'test' stage for Go 1.19"
+    - stage: test
+      go: "1.20"
+      script:
+        - echo "Running tests in the 'test' stage for Go 1.20"
     - stage: deploy
-      python: "3.8"
+      go: "1.18"
       script:
-        - echo "Deployment stage for Python 3.8"
+        - echo "Deployment stage for Go 1.18"
     - stage: deploy
-      python: "3.9"
+      go: "1.19"
       script:
-        - echo "Deployment stage for Python 3.9"
+        - echo "Deployment stage for Go 1.19"
+    - stage: deploy
+      go: "1.20"
+      script:
+        - echo "Deployment stage for Go 1.20"
