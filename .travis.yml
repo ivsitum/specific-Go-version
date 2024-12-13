@@ -5,15 +5,19 @@ go:
   - "1.19"
 
 stages:
+  - build
   - test
 
 jobs:
   include:
-    - stage: test
-      go: "1.18"
+    - stage: build
       script:
-        - echo "Running tests in the 'test' stage for Go 1.18"
+        - echo "This is the build stage."
+        - go version
+        - echo "Build stage completed successfully."
+    
     - stage: test
-      go: "1.19"
       script:
-        - echo "Running tests in the 'test' stage for Go 1.19"
+        - echo "This is the test stage."
+        - go test ./...
+        - echo "Test stage completed successfully."
