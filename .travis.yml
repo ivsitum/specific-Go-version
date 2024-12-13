@@ -3,11 +3,9 @@ language: go
 go:
   - "1.18"
   - "1.19"
-  - "1.20"
 
 stages:
   - test
-  - deploy
 
 jobs:
   include:
@@ -19,19 +17,3 @@ jobs:
       go: "1.19"
       script:
         - echo "Running tests in the 'test' stage for Go 1.19"
-    - stage: test
-      go: "1.20"
-      script:
-        - echo "Running tests in the 'test' stage for Go 1.20"
-    - stage: deploy
-      go: "1.18"
-      script:
-        - echo "Deployment stage for Go 1.18"
-    - stage: deploy
-      go: "1.19"
-      script:
-        - echo "Deployment stage for Go 1.19"
-    - stage: deploy
-      go: "1.20"
-      script:
-        - echo "Deployment stage for Go 1.20"
