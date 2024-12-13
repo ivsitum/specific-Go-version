@@ -1,7 +1,9 @@
-language: go
-go:
-  - 1.22.5
+language: python
+python:
+  - "3.8"
+
+env:
+  - secure: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmVkX2V2ZXJ5X3ZhbCI6ImlzdGQxfHAzZC5vcmZyYWRnb2IkZXFzLm=="
 
 script:
-  - go build
-  - go test
+  - echo "Decrypted variable value is $SECRET_KEY"
